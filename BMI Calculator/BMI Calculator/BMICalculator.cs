@@ -49,6 +49,7 @@ namespace BMI_Calculator
             {
                 _Imperial_CheckedChanged(sender,e);
             }
+
         }
 
         private void BMI_Value_TextChanged(object sender, EventArgs e)
@@ -84,5 +85,15 @@ namespace BMI_Calculator
         {
 
         }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            // this method will clesr values in textboxes
+            HeightValue.Clear();
+            WeightValue.Clear();
+            BMI_Value.Text = "";
+        }
+
+
     }
 }

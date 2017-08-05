@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BMICalculator));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._Imperial = new System.Windows.Forms.RadioButton();
             this._Metric = new System.Windows.Forms.RadioButton();
@@ -39,6 +40,10 @@
             this.BMI_Value = new System.Windows.Forms.TextBox();
             this.cm = new System.Windows.Forms.Label();
             this.kg = new System.Windows.Forms.Label();
+            this.Reset = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.My_BMI = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,7 +90,7 @@
             // _MyHeight
             // 
             this._MyHeight.AutoSize = true;
-            this._MyHeight.Location = new System.Drawing.Point(14, 108);
+            this._MyHeight.Location = new System.Drawing.Point(10, 94);
             this._MyHeight.Name = "_MyHeight";
             this._MyHeight.Size = new System.Drawing.Size(136, 31);
             this._MyHeight.TabIndex = 3;
@@ -93,7 +98,7 @@
             // 
             // HeightValue
             // 
-            this.HeightValue.Location = new System.Drawing.Point(153, 106);
+            this.HeightValue.Location = new System.Drawing.Point(146, 91);
             this.HeightValue.Name = "HeightValue";
             this.HeightValue.Size = new System.Drawing.Size(65, 38);
             this.HeightValue.TabIndex = 4;
@@ -102,7 +107,7 @@
             // _MyWeight
             // 
             this._MyWeight.AutoSize = true;
-            this._MyWeight.Location = new System.Drawing.Point(12, 163);
+            this._MyWeight.Location = new System.Drawing.Point(6, 139);
             this._MyWeight.Name = "_MyWeight";
             this._MyWeight.Size = new System.Drawing.Size(141, 31);
             this._MyWeight.TabIndex = 5;
@@ -110,7 +115,7 @@
             // 
             // WeightValue
             // 
-            this.WeightValue.Location = new System.Drawing.Point(154, 162);
+            this.WeightValue.Location = new System.Drawing.Point(147, 138);
             this.WeightValue.Name = "WeightValue";
             this.WeightValue.Size = new System.Drawing.Size(64, 38);
             this.WeightValue.TabIndex = 6;
@@ -118,9 +123,9 @@
             // 
             // CalculateBMI
             // 
-            this.CalculateBMI.Location = new System.Drawing.Point(59, 212);
+            this.CalculateBMI.Location = new System.Drawing.Point(15, 254);
             this.CalculateBMI.Name = "CalculateBMI";
-            this.CalculateBMI.Size = new System.Drawing.Size(171, 82);
+            this.CalculateBMI.Size = new System.Drawing.Size(148, 79);
             this.CalculateBMI.TabIndex = 0;
             this.CalculateBMI.Text = "Calculate BMI";
             this.CalculateBMI.UseVisualStyleBackColor = true;
@@ -128,17 +133,17 @@
             // 
             // BMI_Value
             // 
-            this.BMI_Value.Location = new System.Drawing.Point(34, 304);
+            this.BMI_Value.Location = new System.Drawing.Point(147, 189);
             this.BMI_Value.Multiline = true;
             this.BMI_Value.Name = "BMI_Value";
-            this.BMI_Value.Size = new System.Drawing.Size(220, 42);
+            this.BMI_Value.Size = new System.Drawing.Size(107, 42);
             this.BMI_Value.TabIndex = 7;
             this.BMI_Value.TextChanged += new System.EventHandler(this.BMI_Value_TextChanged);
             // 
             // cm
             // 
             this.cm.AutoSize = true;
-            this.cm.Location = new System.Drawing.Point(216, 110);
+            this.cm.Location = new System.Drawing.Point(214, 94);
             this.cm.Name = "cm";
             this.cm.Size = new System.Drawing.Size(93, 31);
             this.cm.TabIndex = 8;
@@ -148,17 +153,48 @@
             // kg
             // 
             this.kg.AutoSize = true;
-            this.kg.Location = new System.Drawing.Point(216, 166);
+            this.kg.Location = new System.Drawing.Point(214, 142);
             this.kg.Name = "kg";
             this.kg.Size = new System.Drawing.Size(49, 31);
             this.kg.TabIndex = 0;
             this.kg.Text = "lbs";
+            // 
+            // Reset
+            // 
+            this.Reset.Location = new System.Drawing.Point(169, 254);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(110, 79);
+            this.Reset.TabIndex = 9;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 348);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 26);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // My_BMI
+            // 
+            this.My_BMI.AutoSize = true;
+            this.My_BMI.Location = new System.Drawing.Point(28, 192);
+            this.My_BMI.Name = "My_BMI";
+            this.My_BMI.Size = new System.Drawing.Size(98, 31);
+            this.My_BMI.TabIndex = 11;
+            this.My_BMI.Text = "MyBMI";
             // 
             // BMICalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 442);
+            this.Controls.Add(this.My_BMI);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.kg);
             this.Controls.Add(this.cm);
             this.Controls.Add(this.BMI_Value);
@@ -177,6 +213,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +232,9 @@
         private System.Windows.Forms.TextBox BMI_Value;
         private System.Windows.Forms.Label cm;
         private System.Windows.Forms.Label kg;
+        private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label My_BMI;
     }
 }
 
