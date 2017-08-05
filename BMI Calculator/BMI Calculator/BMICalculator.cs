@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Name: Sambhav kalia
  * Student ID: 300900171
  * Description: This is a BMI Calculator
- * Version: 0.2
+ * Version: 0.3
  */
 namespace BMI_Calculator
 {
@@ -46,11 +46,11 @@ namespace BMI_Calculator
             {
                 _Metric_CheckedChanged(sender, e);
             }
-            if(_Imperial.Checked)
+            if (_Imperial.Checked)
             {
-                _Imperial_CheckedChanged(sender,e);
+                _Imperial_CheckedChanged(sender, e);
             }
-            if(BMIResult <= 18.5)
+            if (BMIResult <= 18.5)
             {
                 BMI_Value.BackColor = Color.LightBlue;
             }
@@ -77,11 +77,12 @@ namespace BMI_Calculator
         {
             // when metric checked this formula and text will change
             if (_Metric.Checked)
-            cm.Text = "cm";
+                cm.Text = "cm";
             kg.Text = "kg";
+            double h = height / 100;
             HeightValue.ReadOnly.ToString();
             WeightValue.ReadOnly.ToString();
-            BMIResult = (weight / (height /100 * height));
+            BMIResult = (weight / (h * h));
             BMI_Value.Text = BMIResult.ToString();
         }
 
@@ -89,11 +90,11 @@ namespace BMI_Calculator
         {
             // when imperial checked this formula and text will change
             if (_Imperial.Checked)
-            cm.Text = "inches";
+                cm.Text = "inches";
             kg.Text = "lbs";
             HeightValue.ReadOnly.ToString();
             WeightValue.ReadOnly.ToString();
-            BMIResult = (weight / (height * height))*702;
+            BMIResult = (weight / (height * height)) * 702;
             BMI_Value.Text = BMIResult.ToString();
         }
 
@@ -102,7 +103,7 @@ namespace BMI_Calculator
 
         }
 
-        private void Reset_Click(object sender, EventArgs e)
+        private void ReSet_Click(object sender, EventArgs e)
         {
             // this method will clesr values in textboxes
             HeightValue.Clear();
@@ -111,6 +112,9 @@ namespace BMI_Calculator
             BMI_Value.BackColor = Color.White;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
