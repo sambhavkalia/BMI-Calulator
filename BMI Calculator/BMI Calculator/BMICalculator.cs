@@ -29,17 +29,18 @@ namespace BMI_Calculator
         private void HeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            height = Convert.ToDouble(HeightValue.Text);
+            height = double.Parse(HeightValue.Text);
         }
 
         private void WeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            weight = Convert.ToDouble(WeightValue.Text);
+            weight = double.Parse(WeightValue.Text);
         }
 
         private void CalculateBMI_Click(object sender, EventArgs e)
         {
+            BMI_Value.BackColor = Color.White;
             // if radio button metric or imperial is selected then
             if (_Metric.Checked)
             {
@@ -49,7 +50,22 @@ namespace BMI_Calculator
             {
                 _Imperial_CheckedChanged(sender,e);
             }
-
+            if(BMIResult <= 18.5)
+            {
+                BMI_Value.BackColor = Color.LightBlue;
+            }
+            else if (BMIResult <= 24.9)
+            {
+                BMI_Value.BackColor = Color.Green;
+            }
+            else if (BMIResult <= 29.9)
+            {
+                BMI_Value.BackColor = Color.Orange;
+            }
+            else if (BMIResult > 40.0)
+            {
+                BMI_Value.BackColor = Color.DarkRed;
+            }
         }
 
         private void BMI_Value_TextChanged(object sender, EventArgs e)
@@ -92,6 +108,7 @@ namespace BMI_Calculator
             HeightValue.Clear();
             WeightValue.Clear();
             BMI_Value.Text = "";
+            BMI_Value.BackColor = Color.White;
         }
 
 
