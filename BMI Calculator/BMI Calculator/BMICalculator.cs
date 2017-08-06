@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
+ * Github link: https://github.com/sambhavkalia/BMI-Calulator
  * Name: Sambhav kalia
  * Student ID: 300900171
  * Description: This is a BMI Calculator
- * Version: 0.3
+ * Version: 0.4 - Added 0-9 and backspace button and their function. Added splash screen to it.
  */
 namespace BMI_Calculator
 {
@@ -108,13 +109,19 @@ namespace BMI_Calculator
             // this method will clesr values in textboxes
             HeightValue.Clear();
             WeightValue.Clear();
-            BMI_Value.Text = "";
+            BMI_Value.Text = "0";
             BMI_Value.BackColor = Color.White;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Button A = (Button)sender;
+            HeightValue.Text = HeightValue.Text + A.Text;
+        }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            HeightValue.Text = "0";
         }
     }
 }
