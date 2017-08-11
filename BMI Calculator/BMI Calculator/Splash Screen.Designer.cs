@@ -57,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(7, 406);
+            this.label2.Location = new System.Drawing.Point(9, 404);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(298, 13);
             this.label2.TabIndex = 5;
@@ -67,9 +67,9 @@
             // 
             this.progressBar1.BackColor = System.Drawing.Color.LightGreen;
             this.progressBar1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.progressBar1.Location = new System.Drawing.Point(31, 375);
+            this.progressBar1.Location = new System.Drawing.Point(27, 375);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(10, 23);
+            this.progressBar1.Size = new System.Drawing.Size(274, 23);
             this.progressBar1.TabIndex = 8;
             // 
             // Splash_Screen

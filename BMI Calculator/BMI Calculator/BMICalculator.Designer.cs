@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.21239F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 2, 0);
@@ -92,7 +92,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 43);
+            this.button1.Size = new System.Drawing.Size(41, 43);
             this.button1.TabIndex = 14;
             this.button1.Text = "0";
             this.button1.UseVisualStyleBackColor = true;
@@ -100,9 +100,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(52, 3);
+            this.button2.Location = new System.Drawing.Point(50, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 43);
+            this.button2.Size = new System.Drawing.Size(46, 43);
             this.button2.TabIndex = 15;
             this.button2.Text = "1";
             this.button2.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(106, 3);
+            this.button3.Location = new System.Drawing.Point(102, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 43);
             this.button3.TabIndex = 16;
@@ -120,7 +120,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(157, 3);
+            this.button4.Location = new System.Drawing.Point(153, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(48, 43);
             this.button4.TabIndex = 17;
@@ -130,7 +130,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(211, 3);
+            this.button5.Location = new System.Drawing.Point(207, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(49, 43);
             this.button5.TabIndex = 18;
@@ -142,7 +142,7 @@
             // 
             this.button6.Location = new System.Drawing.Point(3, 52);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(43, 45);
+            this.button6.Size = new System.Drawing.Size(41, 45);
             this.button6.TabIndex = 19;
             this.button6.Text = "5";
             this.button6.UseVisualStyleBackColor = true;
@@ -150,9 +150,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(52, 52);
+            this.button7.Location = new System.Drawing.Point(50, 52);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(48, 45);
+            this.button7.Size = new System.Drawing.Size(46, 45);
             this.button7.TabIndex = 20;
             this.button7.Text = "6";
             this.button7.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(106, 52);
+            this.button8.Location = new System.Drawing.Point(102, 52);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(45, 45);
             this.button8.TabIndex = 21;
@@ -170,7 +170,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(157, 52);
+            this.button9.Location = new System.Drawing.Point(153, 52);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(48, 45);
             this.button9.TabIndex = 22;
@@ -180,7 +180,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(211, 52);
+            this.button10.Location = new System.Drawing.Point(207, 52);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(49, 45);
             this.button10.TabIndex = 23;
@@ -190,7 +190,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(211, 103);
+            this.button11.Location = new System.Drawing.Point(207, 103);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(53, 44);
             this.button11.TabIndex = 24;
@@ -237,7 +237,6 @@
             this.HeightValue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HeightValue.Location = new System.Drawing.Point(147, 199);
             this.HeightValue.Name = "HeightValue";
-            this.HeightValue.ReadOnly = true;
             this.HeightValue.Size = new System.Drawing.Size(65, 38);
             this.HeightValue.TabIndex = 4;
             this.HeightValue.TextChanged += new System.EventHandler(this.HeightValue_TextChanged);
@@ -256,7 +255,6 @@
             this.WeightValue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.WeightValue.Location = new System.Drawing.Point(147, 248);
             this.WeightValue.Name = "WeightValue";
-            this.WeightValue.ReadOnly = true;
             this.WeightValue.Size = new System.Drawing.Size(65, 38);
             this.WeightValue.TabIndex = 6;
             this.WeightValue.TextChanged += new System.EventHandler(this.WeightValue_TextChanged);
@@ -279,7 +277,6 @@
             this.BMI_Value.ReadOnly = true;
             this.BMI_Value.Size = new System.Drawing.Size(65, 38);
             this.BMI_Value.TabIndex = 7;
-            this.BMI_Value.TextChanged += new System.EventHandler(this.BMI_Value_TextChanged);
             // 
             // cm
             // 
@@ -323,7 +320,7 @@
             this.ReSet.Name = "ReSet";
             this.ReSet.Size = new System.Drawing.Size(112, 55);
             this.ReSet.TabIndex = 12;
-            this.ReSet.Text = "ReSet";
+            this.ReSet.Text = "Reset";
             this.ReSet.UseVisualStyleBackColor = true;
             this.ReSet.Click += new System.EventHandler(this.ReSet_Click);
             // 

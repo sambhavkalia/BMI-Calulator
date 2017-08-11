@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Name: Sambhav kalia
  * Student ID: 300900171
  * Description: This is a Splash Screen for BMI Calculator
- * Version: 0.2 - changed rectangle shape to textbox due to incompatible with other system.
+ * Version: 0.3 -  made progress bar running using if statement
  */
 
 namespace BMI_Calculator
@@ -27,21 +27,17 @@ namespace BMI_Calculator
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
+
+            progressBar1.Increment(1);
+            progressBar1.Maximum = 274; // maximum value dor progress bar to reach
+            if (progressBar1.Value == 274) // when progress bar reaches given value it stop splash screen
             {
-                progressBar1.Width += 1; // increment textbox length
-                if(progressBar1.Width >= 268) // when textbox reaches given witdh it stop splash screen
-                {
-                    timer1.Stop();
-                    BMICalculator bmi = new BMICalculator(); 
-                    bmi.Show(); // opens BMICalculator form
-                    this.Hide();
-                }
-            }
-            catch(Exception)
-            {
-                return;
+                timer1.Stop(); // stop timer
+                BMICalculator bmi = new BMICalculator();
+                bmi.Show(); // opens BMICalculator form
+                this.Hide();
             }
         }
+
     }
 }
