@@ -14,8 +14,7 @@ using System.Windows.Forms;
  * Name: Sambhav kalia
  * Student ID: 300900171
  * Description: This is a BMI Calculator
- * Version: 0.6 - added clear function and moved radio checked to calculateBMI method and
- *                buttons 0-9 needs to be debug.
+ * Version: 0.7 - Added progress bar and label to display result in bmi bar
  */
 namespace BMI_Calculator
 {
@@ -25,21 +24,21 @@ namespace BMI_Calculator
         {
             InitializeComponent();
         }
-        private double height;
-        private double weight;
-        public double BMIResult;
+        private double _height;
+        private double _weight;
+        public double _BMIResult;
         double h;
 
         private void HeightValue_TextChanged(object sender, EventArgs e)
-        {
+        {          
             //add value to textbox
-            height = double.Parse(HeightValue.Text);           
+            _height = double.Parse(HeightValue.Text);           
         }
 
         private void WeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            weight = double.Parse(WeightValue.Text);
+            _weight = double.Parse(WeightValue.Text);
         }
 
         private void CalculateBMI_Click(object sender, EventArgs e)
@@ -49,43 +48,53 @@ namespace BMI_Calculator
             if (_Metric.Checked)
             {
                 _Metric_CheckedChanged(sender, e);
+                h = _height / 100;
+                HeightValue.ReadOnly.ToString();
+                WeightValue.ReadOnly.ToString();
+                _BMIResult = (_weight / (h * h));
+                BMI_Value.Text = _BMIResult.ToString();
+                BMI_Value.BackColor = Color.White;
             }
             if (_Imperial.Checked)
             {
                 _Imperial_CheckedChanged(sender, e);
+                HeightValue.ReadOnly.ToString();
+                WeightValue.ReadOnly.ToString();
+                _BMIResult = (_weight / (_height * _height)) * 702;
+                BMI_Value.Text = _BMIResult.ToString();
+                BMI_Value.BackColor = Color.White;
             }
-            if (BMIResult <= 18.5)
+            if (_BMIResult <= 18.5)
             {
+                label2.BackColor = Color.LightBlue;
+                label2.Text = "UNDER WEIGHT";
+                progressBar2.Value = Convert.ToInt32(_BMIResult);
                 BMI_Value.BackColor = Color.LightBlue;
             }
-            else if (BMIResult <= 24.9)
+            else if (_BMIResult <= 24.9)
             {
+                label2.BackColor = Color.Green;
+                label2.Text = "HEALTHY";
+                progressBar2.Value = Convert.ToInt32(_BMIResult);
                 BMI_Value.BackColor = Color.Green;
             }
-            else if (BMIResult <= 29.9)
+            else if (_BMIResult <= 29.9)
             {
+                label2.BackColor = Color.Orange;
+                label2.Text = "OVER WEIGHT";
+                progressBar2.Value = Convert.ToInt32(_BMIResult);
                 BMI_Value.BackColor = Color.Orange;
             }
-            else if (BMIResult > 40.0)
+            else if (_BMIResult >= 30.0)
             {
-                BMI_Value.BackColor = Color.DarkRed;
+                label2.BackColor = Color.Red;
+                label2.Text = "OBESE";
+                progressBar2.Value = Convert.ToInt32(_BMIResult);
+                BMI_Value.BackColor = Color.Red;
             }
-            if (_Metric.Checked)
-
-            {
-                h = height / 100;
-                HeightValue.ReadOnly.ToString();
-                WeightValue.ReadOnly.ToString();
-                BMIResult = (weight / (h * h));
-                BMI_Value.Text = BMIResult.ToString();
-            }
-            if (_Imperial.Checked)
-            {
-                HeightValue.ReadOnly.ToString();
-                WeightValue.ReadOnly.ToString();
-                BMIResult = (weight / (height * height)) * 702;
-                BMI_Value.Text = BMIResult.ToString();
-            }
+           
+            progressBar2.Maximum = 40;
+            progressBar2.Increment(1);
         }
 
         private void BMI_Value_TextChanged(object sender, EventArgs e)
@@ -109,15 +118,19 @@ namespace BMI_Calculator
             kg.Text = "lbs";
         }
 
-        private void cm_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void ReSet_Click(object sender, EventArgs e)
         {
             // this method will clear values in textboxes
-            _clear();
+            Button resetButton = sender as Button; // downcasting
+
+            switch (resetButton.Text)
+            {
+                case "Reset":
+                    this._clear();
+                    break;
+            }            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -160,7 +173,9 @@ namespace BMI_Calculator
             WeightValue.Text = "0";
             BMI_Value.Clear();
             BMI_Value.BackColor = Color.White;
+            progressBar2.Value = 0;
+            label2.Text = "BODY TYPE";
+            label2.BackColor = Color.Gainsboro;
         }
-
     }
 }
