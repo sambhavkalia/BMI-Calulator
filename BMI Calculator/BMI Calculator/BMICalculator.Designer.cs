@@ -241,6 +241,7 @@
             this.HeightValue.Size = new System.Drawing.Size(65, 38);
             this.HeightValue.TabIndex = 4;
             this.HeightValue.TextChanged += new System.EventHandler(this.HeightValue_TextChanged);
+            this.HeightValue.Enter += new System.EventHandler(this.TextBoxes_Enter);
             // 
             // _MyWeight
             // 
@@ -259,6 +260,7 @@
             this.WeightValue.Size = new System.Drawing.Size(65, 38);
             this.WeightValue.TabIndex = 6;
             this.WeightValue.TextChanged += new System.EventHandler(this.WeightValue_TextChanged);
+            this.WeightValue.Enter += new System.EventHandler(this.TextBoxes_Enter);
             // 
             // CalculateBMI
             // 
