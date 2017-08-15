@@ -27,8 +27,8 @@ namespace BMI_Calculator
         private double _height;
         private double _weight;
         public double _BMIResult;
-        double h;
-
+        private double h;
+  
         private void HeightValue_TextChanged(object sender, EventArgs e)
         {          
             //add value to textbox
@@ -177,5 +177,5 @@ namespace BMI_Calculator
             label2.Text = "BODY TYPE";
             label2.BackColor = Color.Gainsboro;
         }
-    }
+        }
 }
