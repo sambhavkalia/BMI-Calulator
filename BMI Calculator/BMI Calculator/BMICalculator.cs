@@ -30,15 +30,27 @@ namespace BMI_Calculator
         private double h;
   
         private void HeightValue_TextChanged(object sender, EventArgs e)
-        {          
+        {
             //add value to textbox
-            _height = double.Parse(HeightValue.Text);           
+            if (HeightValue.Focused == true)
+            {
+                _height = double.Parse(HeightValue.Text);
+            }
+        }
+        TextBox lastFocused;
+        //Enter event handler for all your TextBoxes
+        private void TextBoxes_Enter(object sender, EventArgs e)
+        {
+            lastFocused = sender as TextBox;
         }
 
         private void WeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            _weight = double.Parse(WeightValue.Text);
+            if (WeightValue.Focused == true)
+            {
+                _weight = double.Parse(WeightValue.Text);
+            }
         }
 
         private void CalculateBMI_Click(object sender, EventArgs e)
@@ -136,24 +148,28 @@ namespace BMI_Calculator
         private void button1_Click(object sender, EventArgs e)
         {
             Button calculatorButton = sender as Button; // downcasting
-            if (HeightValue.Text == "0")
-            {
-                HeightValue.Text = calculatorButton.Text;
-            }
-            else
-            {
-                HeightValue.Text += calculatorButton.Text;
-            }
+            if (lastFocused != null)
             
-            if (WeightValue.Text == "0")
-            {
-                WeightValue.Text = calculatorButton.Text;
-            }
-            else
-            {
-                WeightValue.Text += calculatorButton.Text;
-            }
-
+               lastFocused.Text += calculatorButton.Text;
+            
+          //if (HeightValue.Text == "0")
+          //{
+          //    HeightValue.Text = calculatorButton.Text;
+          //}
+          //else
+          //{
+          //    HeightValue.Text += calculatorButton.Text;
+          //}
+          //
+          //if (HeightValue.Text == "0")
+          //{
+          //    WeightValue.Text = calculatorButton.Text;
+          //}
+          //else
+          //{
+          //    WeightValue.Text += calculatorButton.Text;
+          //}
+          
         }
 
         private void button11_Click(object sender, EventArgs e)
