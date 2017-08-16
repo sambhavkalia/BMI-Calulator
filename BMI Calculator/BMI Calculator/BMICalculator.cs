@@ -28,28 +28,60 @@ namespace BMI_Calculator
         private double _weight;
         public double _BMIResult;
         private double h;
-  
+        TextBox lastFocused;
+        public double Height
+        {
+            get
+            {
+                return this._height;
+            }
+            set
+            {
+                this._height = value;
+            }
+        }
+
+        public double Weight
+        {
+            get
+            {
+                return this._weight;
+            }
+            set
+            {
+                this._weight = value;
+            }
+        }
         private void HeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            if (HeightValue.Focused == true)
+            try
             {
-                _height = double.Parse(HeightValue.Text);
+                this.Height = Convert.ToDouble(HeightValue.Text);
+            }
+            catch (Exception errmsg)
+            {
+                Debug.WriteLine(errmsg);
+                this.Height = 1;
             }
         }
-        TextBox lastFocused;
-        //Enter event handler for all your TextBoxes
         private void TextBoxes_Enter(object sender, EventArgs e)
         {
+            //Enter event handler for all your TextBoxes
             lastFocused = sender as TextBox;
         }
 
         private void WeightValue_TextChanged(object sender, EventArgs e)
         {
             //add value to textbox
-            if (WeightValue.Focused == true)
+            try
             {
-                _weight = double.Parse(WeightValue.Text);
+                this.Weight = Convert.ToDouble(WeightValue.Text);
+            }
+            catch (Exception errmsg)
+            {
+                Debug.WriteLine(errmsg);
+                this.Weight = 0;
             }
         }
 
@@ -76,6 +108,7 @@ namespace BMI_Calculator
                 BMI_Value.Text = _BMIResult.ToString();
                 BMI_Value.BackColor = Color.White;
             }
+            // shows color and progress according to BMI Result
             if (_BMIResult <= 18.5)
             {
                 label2.BackColor = Color.LightBlue;
@@ -149,27 +182,8 @@ namespace BMI_Calculator
         {
             Button calculatorButton = sender as Button; // downcasting
             if (lastFocused != null)
-            
-               lastFocused.Text += calculatorButton.Text;
-            
-          //if (HeightValue.Text == "0")
-          //{
-          //    HeightValue.Text = calculatorButton.Text;
-          //}
-          //else
-          //{
-          //    HeightValue.Text += calculatorButton.Text;
-          //}
-          //
-          //if (HeightValue.Text == "0")
-          //{
-          //    WeightValue.Text = calculatorButton.Text;
-          //}
-          //else
-          //{
-          //    WeightValue.Text += calculatorButton.Text;
-          //}
-          
+
+                lastFocused.Text += calculatorButton.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -185,13 +199,19 @@ namespace BMI_Calculator
         }
         private void _clear()
         {
-            HeightValue.Text = "0";
-            WeightValue.Text = "0";
+            HeightValue.Clear();
+            WeightValue.Clear();
+            lastFocused.Clear();
             BMI_Value.Clear();
             BMI_Value.BackColor = Color.White;
             progressBar2.Value = 0;
             label2.Text = "BODY TYPE";
             label2.BackColor = Color.Gainsboro;
         }
+
+        private void BMICalculatorClose(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
+    }
 }

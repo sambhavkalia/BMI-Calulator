@@ -238,6 +238,7 @@
             this.HeightValue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.HeightValue.Location = new System.Drawing.Point(147, 199);
             this.HeightValue.Name = "HeightValue";
+            this.HeightValue.ReadOnly = true;
             this.HeightValue.Size = new System.Drawing.Size(65, 38);
             this.HeightValue.TabIndex = 4;
             this.HeightValue.TextChanged += new System.EventHandler(this.HeightValue_TextChanged);
@@ -257,6 +258,7 @@
             this.WeightValue.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.WeightValue.Location = new System.Drawing.Point(147, 240);
             this.WeightValue.Name = "WeightValue";
+            this.WeightValue.ReadOnly = true;
             this.WeightValue.Size = new System.Drawing.Size(65, 38);
             this.WeightValue.TabIndex = 6;
             this.WeightValue.TextChanged += new System.EventHandler(this.WeightValue_TextChanged);
@@ -385,6 +387,7 @@
             this.Name = "BMICalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BMICalculatorClose);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
